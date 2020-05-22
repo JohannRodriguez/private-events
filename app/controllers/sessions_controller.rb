@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       sessions[:user_id] = @user.id
       redirect_to users_show
     else
-      redirect_to log_in, alert:'Invalid Username'
+      redirect_to '/sign_in', alert:'Invalid Username'
     end
   end
 
