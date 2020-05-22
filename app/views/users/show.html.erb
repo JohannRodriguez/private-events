@@ -1,4 +1,8 @@
 
 <h1>Your Events</h1>
 <h2><%=@user.username%><h2>
-<br>
+<%@user.events.each do |e|%>
+  <h4>
+    <%=e.name%> at <%=e.event_date%> in <%=e.location%>
+  </h4>
+<%end%>
