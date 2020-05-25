@@ -1,2 +1,10 @@
-<h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
+<h1>Events</h1>
+<%= @event.each do |e| %>
+ <h4>
+   Created by: <%= e.user.username %>
+ </h4>
+  <h4>
+    <%= e.name%> at <%= e.event_date %> in <%= e.location %>
+  </h4>
+  <br>
+<% end %>
