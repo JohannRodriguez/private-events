@@ -4,8 +4,8 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new
-    @event.user_id = session[:user_id]
+    @user = User.find(session[:user_id])
+    @event = @user.events.build()
     @event.name = params[:name]
     @event.event_date = params[:event_date]
     @event.location = params[:location]
@@ -17,6 +17,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @event = Event.find(params[:id])
   end
 
   def index

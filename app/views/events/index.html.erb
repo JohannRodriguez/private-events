@@ -1,8 +1,8 @@
 <h1>Events</h1>
 <%= @event.each do |e| %>
- <h4>
-   Created by: <%= e.user.username %>
- </h4>
+  <h4>
+    Created by: <%= e.user.username %>
+  </h4>
   <h4>
     <%= e.name%> at <%= e.event_date %> in <%= e.location %>
   </h4>
