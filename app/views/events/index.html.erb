@@ -4,7 +4,7 @@
     Created by: <%= e.user.username %>
   </h4>
   <h4>
-    <%= e.name%> at <%= e.event_date %> in <%= e.location %>
+    <%= link_to full_event_name(e), events_show_path(:id => e.id) %>
   </h4>
   <br>
 <% end %>
