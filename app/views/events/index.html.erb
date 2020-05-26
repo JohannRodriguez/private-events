@@ -1,10 +1,6 @@
 <h1>Events</h1>
 <%= @event.each do |e| %>
-  <h4>
-    Created by: <%= e.user.username %>
-  </h4>
-  <h4>
-    <%= link_to full_event_name(e), events_show_path(:id => e.id) %>
-  </h4>
+  <h4>Created by: <%= e.user.username %></h4>
+  <h4><%= link_to full_event_name(e), events_show_path(:id => e.id) %></h4>
   <br>
 <% end %>
