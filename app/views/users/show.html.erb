@@ -8,8 +8,15 @@
 
 <h2>Attending events:</h2>
 <ul>
+  <h4>Upcoming events:</h4>
   <% @user.invitations.each do |i|%>
-    <li><%= link_to attended_event(i), events_show_path(:id => i.attended_event.id) %></li>
+    <li><%= link_to i.attended_event.event_date, events_show_path(:id => i.attended_event.id) %></li>
+  <% end %>
+</ul>
+<ul>
+  <h4>Previous events:</h4>
+  <% @user.invitations.each do |i|%>
+    <li><%= link_to i.attended_event.name, events_show_path(:id => i.attended_event.id) %></li>
   <% end %>
 </ul>
 
