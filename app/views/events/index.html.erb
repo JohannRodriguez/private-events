@@ -1,5 +1,13 @@
-<h1>Events</h1>
-<%= @event.each do |e| %>
+<% @event_upcoming=Event.upcoming %>
+<% @event_previous=Event.previous %>
+<h1>Upcoming Events</h1>
+<%= @event_upcoming.each do |e| %>
+  <h4>Created by: <%= e.user.username %></h4>
+  <h4><%= link_to full_event_name(e), events_show_path(:id => e.id) %></h4>
+  <br>
+<% end %>
+<h1>Previous Events</h1>
+<%= @event_previous.each do |e| %>
   <h4>Created by: <%= e.user.username %></h4>
   <h4><%= link_to full_event_name(e), events_show_path(:id => e.id) %></h4>
   <br>
