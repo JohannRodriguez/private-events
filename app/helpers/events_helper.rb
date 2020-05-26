@@ -10,7 +10,7 @@ module EventsHelper
   end
 
   def attendace(event)
-    return "Attendees List" unless event.invitations.count==0
+    return "Attendees List" unless event.invitations.count == 0
     "No Attendees yet"
   end
 end
