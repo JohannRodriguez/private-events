@@ -9,7 +9,7 @@
 <h2>Attending events:</h2>
 <ul>
   <% @user.invitations.each do |i|%>
-    <li><%= link_to attended_event(i), events_show_path(:id => i.id) %></li>
+    <li><%= link_to attended_event(i), events_show_path(:id => i.attended_event.id) %></li>
   <% end %>
 </ul>
 
