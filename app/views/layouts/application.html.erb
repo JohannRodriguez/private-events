@@ -10,6 +10,11 @@
   </head>
 
   <body>
+    <nav>
+      <%= link_to 'Index', root_path %></h4>&nbsp
+      <%= link_to 'Sign in', sign_in_path %></h4>&nbsp
+      <%= link_to 'Sign up', users_new_path %></h4>
+    </nav>
     <%= yield %>
   </body>
 </html>
