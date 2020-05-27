@@ -22,7 +22,7 @@ class EventsController < ApplicationController
 
   def index
     #@event = Event.find_each
-    #@event_upcoming=Event.upcoming
-    #@event_previous=Event.previous
+    @event_upcoming=Event.upcoming
+    @event_previous=Event.previous
   end
 end
