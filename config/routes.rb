@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   post 'events/new', to: 'events#create'
   get 'events/show/:id', to: 'events#show', as: :events_show
   get 'events/index'
-  get 'users/new'
-  get 'users/create'
+  get 'users/new', to: 'users#new'
+  post 'users/new', to: 'users#create'
   get 'users/show'
   get '/sign_in', to: 'sessions#new'
   post '/sign_in', to: 'sessions#create'
