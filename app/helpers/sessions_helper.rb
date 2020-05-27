@@ -1,7 +1,5 @@
 module SessionsHelper
   def invalid_username
-    if flash[:alert]
-      flash[:alert]
-    end
+    flash[:alert]
   end
 end

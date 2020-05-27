@@ -1,8 +1,6 @@
 module EventsHelper
   def invalid_username
-    if flash[:alert]
-      flash[:alert]
-    end
+    flash[:alert]
   end
 
   def full_event_name(event)
@@ -10,7 +8,8 @@ module EventsHelper
   end
 
   def attendace(event)
-    return "Attendees List" unless event.invitations.count == 0
-    "No Attendees yet"
+    return 'Attendees List' unless event.invitations.count.zero?
+
+    'No Attendees yet'
   end
 end

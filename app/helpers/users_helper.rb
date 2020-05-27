@@ -1,8 +1,6 @@
 module UsersHelper
   def invalid_event
-    if flash[:alert]
-      flash[:alert]
-    end
+    flash[:alert]
   end
 
   def full_event_name(event)
@@ -10,17 +8,18 @@ module UsersHelper
   end
 
   def upcoming_events(user)
-    list=[]
+    list = []
     user.invitations.each do |i|
-      list.push i if i.attended_event.event_date >Time.now
+      list.push i if i.attended_event.event_date > Time.now
     end
-    return list
+    list
   end
+
   def previous_events(user)
-    list=[]
+    list = []
     user.invitations.each do |i|
       list.push i if i.attended_event.event_date <= Time.now
     end
-    return list
+    list
   end
 end
