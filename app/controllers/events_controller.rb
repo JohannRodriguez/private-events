@@ -15,7 +15,6 @@ class EventsController < ApplicationController
     else
       redirect_to events_new_path, alert: 'All fields must be filled'
     end
-
   end
 
   def show

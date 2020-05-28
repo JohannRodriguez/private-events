@@ -13,7 +13,7 @@
     <li><%= link_to i.attended_event.name, events_show_path(:id => i.attended_event.id) %></li>
   <% end %>
 </ul>
-<ul>
+<ul class="previous_events">
   <h4>Previous events:</h4>
   <% previous_events(@user).each do |i|%>
     <li><%= link_to i.attended_event.name, events_show_path(:id => i.attended_event.id) %></li>

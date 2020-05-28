@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+ body {
+   margin-left: 25px;
+   margin-top: 0;
+ }
+
+ a {
+   color: rgb(64, 64, 240);
+   text-decoration: none;
+ }
+
+ nav {
+   background-color: lightgray;
+   border-bottom: solid 2px rgb(64, 64, 240);
+   display: flex;
+   max-width: 550px;
+   padding: 7px 5px;
+ }
+
+ nav a {
+   margin-right: 7px;
+   border: 1px solid rgb(64, 64, 240);
+   border-radius: 2px;
+   padding: 2px 5px;
+   background-color: rgb(238, 237, 237);
+}
+
+nav a:hover {
+  background-color: rgb(64, 64, 240);
+  border-color: rgb(238, 237, 237);
+  color: rgb(238, 237, 237);
+}
