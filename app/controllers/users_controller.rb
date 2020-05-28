@@ -6,8 +6,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    @user.save
-    redirect_to sign_in_url
+    if @user.valid?
+      @user.save
+      redirect_to sign_in_url
+    else
+      redirect_to users_new_path, alert: 'All fields must be fill correctly'
+    end
   end
 
   def show

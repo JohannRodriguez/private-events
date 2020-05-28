@@ -20,7 +20,7 @@
 ## Getting Started
 
 - You can clone this repository locally by using: git@github.com:JohannRodriguez/private-events.git
-- To use it, first get into the repository folder on your terminal and use the comand "rails db:migrate".
+- To use it, first get into the repository folder on your terminal and use the command "rails db:migrate".
 - Then type "rails server"
 - Go to your browser and type http://localhost:3000 to see the page.
 

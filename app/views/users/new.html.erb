@@ -1,6 +1,7 @@
-<h1>Sign Up</h1>
+<%= invalid_event %>
 
-<%=form_tag "/users/new" do %>
+<h1>Sign Up</h1>
+<%= form_tag "/users/new" do %>
   <%= label_tag "User name"%><br>
   <%= text_field_tag "user[username]" %><br>
   <%= label_tag "email"%><br>

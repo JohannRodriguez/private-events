@@ -1,6 +1,5 @@
 class Event < ApplicationRecord
-  validates :name, presence: true
-  validates :location, presence: true
+  validates :name, :location, presence: true
   belongs_to :user
 
   has_many :invitations, foreign_key: :attended_event_id
