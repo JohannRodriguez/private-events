@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  # rubocop:disable Layout/LineLength
   def new
     @event = Event.new
   end
@@ -25,4 +26,5 @@ class EventsController < ApplicationController
     @event_upcoming = Event.upcoming
     @event_previous = Event.previous
   end
+  # rubocop:enable Layout/LineLength
 end
