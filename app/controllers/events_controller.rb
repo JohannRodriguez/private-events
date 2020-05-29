@@ -5,7 +5,7 @@ class EventsController < ApplicationController
 
   def create
     @user = User.find(session[:user_id])
-    @event = @user.events.build(name: params[:name], event_date: params[:event_date], location: params[:location])
+    @event = @user.created_events.build(name: params[:name], event_date: params[:event_date], location: params[:location])
     if @event.valid?
       if @event.save
         redirect_to users_show_path, notice: 'Your event was created'

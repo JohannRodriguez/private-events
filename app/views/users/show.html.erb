@@ -2,7 +2,7 @@
 
 <h1><%= @user.username %><h1>
 <h2>Your Events:</h2>
-<% @user.events.each do |e| %>
+<% @user.created_events.each do |e| %>
   <h4><%= link_to full_event_name(e), events_show_path(:id => e.id) %></h4>
 <% end %>
 
