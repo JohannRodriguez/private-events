@@ -17,12 +17,12 @@ describe Event, type: :model do
     end
 
     it 'fails to create event if lacks name' do
-      e = Event.new(user_id: 1, event_date: Time.now)
+      e = Event.new(creator_id: 1, event_date: Time.now)
       expect(e.persisted?).to eql(false)
     end
 
     it 'fails to create event if lacks date' do
-      e = Event.new(user_id: 1, name: 'Party')
+      e = Event.new(creator_id: 1, name: 'Party')
       expect(e.persisted?).to eql(false)
     end
   end

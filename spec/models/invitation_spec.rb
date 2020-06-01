@@ -10,14 +10,14 @@ describe Invitation, type: :model do
 
     it 'creates new valid invitation with attendee id and event_id' do
       u = User.create(username: 'name', email: 'another@someserver.com')
-      e = Event.create(user_id: u.id, name: 'Party', event_date: Time.now + 10.days, location: 'web')
+      e = Event.create(creator_id: u.id, name: 'Party', event_date: Time.now + 10.days, location: 'web')
       i = e.invitations.new(attendee_id: u.id, attended_event_id: e.id)
       expect(i.valid?).to be(true)
     end
 
     it 'fails to create invitation without attendee id ' do
       u = User.create(username: 'name', email: 'another@someserver.com')
-      e = Event.create(user_id: u.id, name: 'Party', event_date: Time.now + 10.days, location: 'web')
+      e = Event.create(creator_id: u.id, name: 'Party', event_date: Time.now + 10.days, location: 'web')
       i = e.invitations.new(attended_event_id: e.id)
       expect(i.valid?).to be(false)
     end
