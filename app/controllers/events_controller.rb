@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-  # rubocop:disable Layout/LineLength
   def new
     @event = Event.new
   end
@@ -27,9 +26,8 @@ class EventsController < ApplicationController
     @event_previous = Event.previous
   end
 
-  def event_params(_name, _event_date, _location)
-    params = ActionController::Parameters.new(event: { name: _name, event_date: _event_date, location: _location })
+  def event_params(name, event_date, location)
+    params = ActionController::Parameters.new(event: { name: name, event_date: event_date, location: location })
     params.require(:event).permit(:name, :event_date, :location)
   end
-  # rubocop:enable Layout/LineLength
 end
