@@ -2,6 +2,7 @@ class InvitationsController < ApplicationController
   def create
     @event = Event.find(params[:event_id])
     i = @event.invitations.build(invitation_params)
+  
     # i.attended_event_id = params[:event_id]
     # i.attendee_id = session[:user_id]
     i.save
@@ -11,6 +12,7 @@ class InvitationsController < ApplicationController
   private
 
   def invitation_params
-    params.permit(:invitation).permit(:attendee_id, :attended_event_id)
+    params = ActionController::Parameters.new(invitation: { attendee_id: session[:user_id] })
+    params.require(:invitation).permit(:attendee_id)
   end
 end
