@@ -15,7 +15,9 @@ module EventsHelper
 
 
   def join_event
-    if @event.creator_id == session[:user_id]
+    if @event.event_date < Time.now
+      'You can not join a past event'
+    elsif @event.creator_id == session[:user_id]
       'Tell people  to join your event!'
     elsif joined?
       'You have already joined this event'

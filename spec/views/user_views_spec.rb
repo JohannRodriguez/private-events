@@ -25,7 +25,7 @@ describe "user show view" do
     visit '/sign_in'
     fill_in 'username', with: 'name'
     click_button 'Login'
-    visit users_show_path
+    visit user_path(1)
     expect(page).to have_content 'name'
   end
 end

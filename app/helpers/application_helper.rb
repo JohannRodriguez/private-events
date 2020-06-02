@@ -1,7 +1,7 @@
 module ApplicationHelper
   def user_first_btn
     if !session[:user_id].nil?
-      link_to 'Profile', users_show_path
+      link_to 'Profile', user_path(session[:user_id])
     else
       link_to 'Sign in', sign_in_path
     end

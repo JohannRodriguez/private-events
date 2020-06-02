@@ -3,13 +3,13 @@
 <% Event.upcoming.each do |e| %>
   <div class="border">
     <p>Created by: <%= e.creator.username %></p>
-    <h4 class="wrap"><%= link_to full_event_name(e), events_show_path(:id => e.id) %></h4>
+    <h4 class="wrap"><%= link_to full_event_name(e), event_path(:id => e.id) %></h4>
   </div>
 <% end %>
 <h1>Previous Events</h1>
 <% Event.previous.each do |e| %>
   <div class="border">
     <p>Created by: <%= e.creator.username %></p>
-    <h4 class="wrap"><%= link_to full_event_name(e), events_show_path(:id => e.id) %></h4>
+    <h4 class="wrap"><%= link_to full_event_name(e), event_path(:id => e.id) %></h4>
   </div>
 <% end %>

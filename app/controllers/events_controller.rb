@@ -9,12 +9,12 @@ class EventsController < ApplicationController
     @event = @user.created_events.build(event_params(params[:name], params[:event_date], params[:location]))
     if @event.valid?
       if @event.save
-        redirect_to users_show_path, notice: 'Your event was created'
+        redirect_to user_path(session[:user_id]), notice: 'Your event was created'
       else
-        redirect_to events_new_path, alert: 'Error saving event'
+        redirect_to new_event_path, alert: 'Error saving event'
       end
     else
-      redirect_to events_new_path, alert: 'All fields must be filled'
+      redirect_to new_event_path, alert: 'All fields must be filled'
     end
   end
 

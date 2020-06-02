@@ -3,21 +3,21 @@
 <h1><%= @user.username %><h1>
 <h2>Your Events:</h2>
 <% @user.created_events.each do |e| %>
-  <h4><%= link_to full_event_name(e), events_show_path(:id => e.id) %></h4>
+  <h4><%= link_to full_event_name(e), event_path(:id => e.id) %></h4>
 <% end %>
 
 <h2>Attending events:</h2>
 <ul>
   <h4>Upcoming events:</h4>
   <% upcoming_events(@user).each do |i|%>
-    <li><%= link_to i.attended_event.name, events_show_path(:id => i.attended_event.id) %></li>
+    <li><%= link_to i.attended_event.name, event_path(:id => i.attended_event.id) %></li>
   <% end %>
 </ul>
 <ul class="previous_events">
   <h4>Previous events:</h4>
   <% previous_events(@user).each do |i|%>
-    <li><%= link_to i.attended_event.name, events_show_path(:id => i.attended_event.id) %></li>
+    <li><%= link_to i.attended_event.name, event_path(:id => i.attended_event.id) %></li>
   <% end %>
 </ul>
 
-<%= link_to  "New Event", events_new_path %>
+<%= link_to  "New Event", new_event_path %>

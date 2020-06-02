@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-  get 'events/new', to: 'events#new'
+  resources :events, only: [:new, :create, :show, :index]
   post 'events/new', to: 'events#create'
-  get 'events/show/:id', to: 'events#show', as: :events_show
-  get 'events/index'
-  get 'users/new', to: 'users#new'
+  resources :users, only: [:new, :create, :show]
   post 'users/new', to: 'users#create'
-  get 'users/show'
   get '/sign_in', to: 'sessions#new'
   post '/sign_in', to: 'sessions#create'
   get 'sessions/logout', to: 'sessions#destroy', as: :sessions_destroy
