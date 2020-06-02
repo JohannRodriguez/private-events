@@ -13,16 +13,19 @@ describe "user new_view " do
   end
 end
 
-# describe "user show view" do
-#   before :each do
-#     User.create(username: 'name', email: 'some@someserver.com')
-#     user = User.first 
-#     puts user.inspect
-#     session_params = { user_id: user.id }
-#   end
+describe "user show view" do
+  before :each do
+    User.create(username: 'name', email: 'some@someserver.com')
+    user = User.first
+    puts user.inspect
+    session_params = { user_id: user.id }
+  end
 
-#   it 'shows the user name' do 
-#     visit users_show_path
-#     expect(page).to have_content 'name'
-#   end
-#end
+  it 'shows the user name' do
+    visit '/sign_in'
+    fill_in 'username', with: 'name'
+    click_button 'Login'
+    visit users_show_path
+    expect(page).to have_content 'name'
+  end
+end

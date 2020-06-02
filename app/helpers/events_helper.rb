@@ -12,4 +12,23 @@ module EventsHelper
 
     'No Attendees yet'
   end
+
+
+  def join_event
+    if @event.creator_id == session[:user_id]
+      'Tell people  to join your event!'
+    elsif joined?
+      'You have already joined this event'
+    else
+      'Join event'
+    end
+    # link_to 'Join event'
+  end
+
+  def joined?
+    @event.invitations.each do |i|
+      return true if i.attendee_id == session[:user_id]
+    end
+    false
+  end
 end
