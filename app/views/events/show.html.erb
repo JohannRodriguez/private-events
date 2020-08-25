@@ -1,0 +1,13 @@
+
+<h1><%= @event.name %></h1>
+<%= join_event  %>
+<h2>Event created by:</h2>
+
+<h3><%= @event.creator.username %></h3>
+
+<h2><%= attendace(@event) %></h2>
+<ul>
+  <% @event.invitations.each do |i|%>
+    <li><%= i.attendee.username %></li>
+  <% end %>
+</ul>

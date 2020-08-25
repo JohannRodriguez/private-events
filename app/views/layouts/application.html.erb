@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PrivateEvents</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+      <p><%= link_to 'Index', root_path %></p>
+      <p><%= user_first_btn %></p>
+      <p><%= user_second_btn %></p>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

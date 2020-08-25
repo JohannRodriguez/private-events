@@ -1,0 +1,12 @@
+<%= invalid_event %>
+<% invalid_username %>
+<h1>New Event</h1>
+<%= form_with model: @events do |form| %>
+ <%= form.label :name %> <br>
+ <%= form.text_field :name %> <br>
+ <%= form.label :event_date %> <br>
+ <%= form.date_field :event_date %> <br>
+ <%= form.label :location %> <br>
+ <%= form.text_field :location %> <br>
+ <%= form.submit 'Create' %>
+<%end%>
